@@ -1,3 +1,3 @@
-# URRL
+# URrL
 
-URRL (uniform resource re-locator) is a basic URL shortener.
+URrL (Uniform Resource re-Locator) is a basic URL shortener.
