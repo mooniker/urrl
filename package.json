@@ -1,8 +1,8 @@
 {
   "name": "urrl",
   "version": "0.0.0",
-  "description": "URRL (uniform resource re-locator) is a basic URL shortener.",
-  "main": "index.js",
+  "description": "URRL (Uniform Resource re-Locator) is a basic URL shortener.",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
