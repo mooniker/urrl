@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS urrls;
+
+CREATE TABLE urrls (
+  id SERIAL PRIMARY KEY,
+  url TEXT NOT NULL,
+  alias TEXT,
+  hits INT DEFAULT 0
+);

@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title URrL - a URL shortener
+  %body
+    %h1 URL shortener (aka Uniform Resource re-Locator)
+    %form{action: '.', method: 'post'}
+      %label{for: 'url'} URL
+      %input{name: 'url', id: 'url', placeholder: 'http://url.to.shorten/'}
+      %button{type: 'submit'} shorten
+    %table
+      %tr
+        %th URL
+        %th alias
+        %th hits
+      - @urrls.each do |urrl|
+        %tr
+          %td= urrl.url
+          %td= urrl.alias
+          %td= urrl.hits
