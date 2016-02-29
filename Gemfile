@@ -7,4 +7,8 @@ gem 'pg'
 gem 'activerecord'
 gem 'hashids'
 gem 'json'
-gem 'pry-byebug'
+
+group :development, :test do
+  gem 'pry-byebug'
+  gem 'rspec'
+end
