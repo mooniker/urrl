@@ -40,14 +40,12 @@ post '/' do
   urrl = Urrl.find_by(url: params[:url])
   if urrl
     puts 'already got this one'
-    # give user the existing alias
-    return urrl.alias # TODO
   else
-    new_urrl = Urrl.create(url: params[:url])
-    new_hash = hashids.encode(new_urrl.id)
+    urrl = Urrl.create(url: params[:url])
+    new_hash = hashids.encode(urrl.id)
     puts new_hash
-    new_urrl.alias = new_hash
-    new_urrl.save
-    return new_urrl.alias
+    urrl.alias = new_hash
+    urrl.save
   end
+  { url: urrl.url, alias: urrl.alias }.to_json
 end
