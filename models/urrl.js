@@ -1,7 +1,9 @@
 var mongoose = require('mongoose');
 // var shortId = require('shortid');
 var hashIds = require('hashids');
-var hashId = new hashIds('URrLs are not so salty');
+var SALT = 'URrLs are not so salty'
+var MIN_HASH_LENGTH = 7;
+var hashId = new hashIds(SALT, MIN_HASH_LENGTH);
 
 var Schema = mongoose.Schema;
 

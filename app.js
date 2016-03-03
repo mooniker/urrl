@@ -36,13 +36,6 @@ app.post('/', function(request, response) {
   });
 });
 
-app.get('/urrls', function(request, response) {
-  UrrlModel.find({}, function(err, docs) {
-    if (err) response.json({ error: err });
-    else response.json(docs);
-  });
-});
-
 app.get('/index', function(request, response) {
   UrrlModel.find({}, function(err, docs) {
     response.json(docs);
