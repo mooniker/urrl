@@ -27,8 +27,8 @@ UrrlSchema.pre('save', function(next) {
     var alias = hashId.encode(this._id);
     console.log('Alias generated from', this._id, alias);
     this.alias = alias;
-    next();
   }
+  next();
 });
 
 module.exports = mongoose.model('Urrl', UrrlSchema);
