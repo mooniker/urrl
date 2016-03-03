@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title URrL - a URL shortener
+  body
+    h1 URL shortener (aka Uniform Resource re-Locator)
+    form(method='post', action='.')
+      label(for='url') URL
+      input#url(name='url', autofocus='', required='', placeholder='http://url.to.shorten/')
+      button(type='submit') Shorten
+    table
+      tr
+        th URL
+        th alias
+        th hits
+        each urrl in urrls
+          tr
+            td= urrl.url
+            td= urrl.alias
+            td= urrl.hits

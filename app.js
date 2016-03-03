@@ -16,8 +16,14 @@ var mongoConnection = mongoose.connect('mongodb://localhost/urrl' || env.MONGO_S
 var UrrlModel = require('./models/urrl');
 
 app.set('view engine', 'jade');
-app.use(express.static('public'));
+// app.use(express.static('public'));
 app.use(bodyParser());
+
+app.get('/', function(request, response) {
+  UrrlModel.find({}, function(err, docs) {
+    response.render('index', err ? { error: err } : { urrls: docs });
+  });
+});
 
 app.post('/', function(request, response) {
   // console.log('REQ:', request.body);
