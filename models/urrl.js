@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 // var shortId = require('shortid');
 var hashIds = require('hashids');
-var SALT = 'URrLs are not so salty'
+var SALT = 'URrLs are not so salty';
 var MIN_HASH_LENGTH = 7;
 var hashId = new hashIds(SALT, MIN_HASH_LENGTH);
 
@@ -22,10 +22,10 @@ var UrrlSchema = new Schema({
 UrrlSchema.plugin(autoIncrement.plugin, 'Urrl');
 
 UrrlSchema.pre('save', function(next) {
-  console.log('URrL being saved.');
+  // console.log('URrL being saved.');
   if (!this.alias) {
     var alias = hashId.encode(this._id);
-    console.log('Alias generated from', this._id, alias);
+    // console.log('Alias generated from', this._id, alias);
     this.alias = alias;
   }
   next();
