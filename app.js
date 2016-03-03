@@ -36,7 +36,7 @@ app.post('/', function(request, response) {
   });
 });
 
-app.get('/index', function(request, response) {
+app.get('/index.json', function(request, response) {
   UrrlModel.find({}, function(err, docs) {
     response.json(docs);
   });
