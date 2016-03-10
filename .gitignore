@@ -2,4 +2,6 @@
 bin/
 include/
 lib/
-.pyc
+*.pyc
+venv/
+pip-selfcheck.json
