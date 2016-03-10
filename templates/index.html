@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>URrL</h2>
+  {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
+  <form action="/" method="post">
+    <label for="url">URL</label>
+    <input name="url" id="url" placeholder="http://url.to.shorten" autofocus></input>
+    <button type="submit">Shorten</button>
+  </form>
+  {% if urrls %}
+    <table>
+      <tr>
+        <th>URL</th>
+        <th>alias</th>
+        <th>hits</th>
+      </tr>
+      {% for urrl in urrls %}
+        <tr>
+          <td>{{urrl.url}}</td>
+          <td>{{urrl.alias}}</td>
+          <td>{{urrl.hits}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>No URrLs yet.</p>
+  {% endif %}
+{% endblock %}
